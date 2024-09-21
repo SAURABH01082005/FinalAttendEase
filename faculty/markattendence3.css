@@ -1,0 +1,230 @@
+*{
+    box-sizing: border-box;
+}
+
+header{
+    
+    background-color: #194a8d;
+    font-family: sans-serif;
+    color: white;
+    height: 4.7rem;
+   
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+   
+    
+    
+}
+body{
+   margin:0px;
+  
+}
+
+.container{
+    width:100vw;
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    
+}
+
+.under_container{
+    width: 80%;
+    height:100%;
+    display: flex;
+    /* border: 10px black solid; */
+    /* border-radius: 20px;       not workning*/
+    
+}
+
+.TableContainer{
+    width:100%;
+    height:90%;
+    border-collapse: collapse;
+   
+}
+th{
+    
+    background-color: #194a8d;
+    font-family: sans-serif;
+    color: white;
+}
+
+td,th{
+    text-align: center;
+
+}
+
+.firstrow_name{
+    font-family: nunito sans;
+    text-align: left;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+.datebox,.submitbox {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+input[type="date"]  {
+    
+    appearance: none;
+    
+    background-color: #d0d0d0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+input[type="submit"] {
+    border: 0px solid #cccccc88;
+    background-color: #d0d0d0;
+    border-radius: 10px;
+    width: 300px;
+    padding: 10px;
+    font-size: 1.4rem;
+    margin-top: 10px;
+
+}
+
+.datebox{
+    display: flex;
+}
+
+.dateboxchild {
+    padding: 20px;
+}
+.child2{
+    
+    padding-left:0px ;
+    padding-top: 27px;
+}
+input[type="submit"]:hover{
+    background-color:  #194a8d ;
+    color: white;
+}
+
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+}
+
+.row1{
+    height: 50px;
+    font-size: 1.6rem;
+}
+
+.dropdown {
+    font-size: 1.8rem;
+
+}
+
+
+td[class="dropdown"] {
+    display: flex;
+    padding-top: 10px;
+    
+}
+
+.lecture_slot{
+    /* padding-top: 10px; */
+    /* font-size: 1.8rem; */
+    font-size: 1.46rem;
+    background-color: #d0d0d0;
+    border:0px solid;
+    border-radius: 10px;
+
+    margin-left: 20px;
+    
+    width: 250px;
+    height: 50px;
+}
+select{
+    font-size: 1.46rem;
+    background-color: #d0d0d0;
+    border:0px solid;
+    border-radius: 10px;
+
+    margin-left: 20px;
+    
+    width: 250px;
+    height: 50px;
+}
+
+div[class="dropdown"]{
+    margin-top: 7px;
+}
+
+input[type="text"]{
+    width: 400px;
+    height: 50px;
+    border: 0px solid #ccc;
+     background-color: #d0d0d0;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.4rem;
+    margin:10px;
+    margin-left: 20px;
+}
+
+div[class="topic_teached"]{
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-top: 15px;
+    
+}
+
+td[class="topic_teached"]{
+    display: flex;
+    flex-direction: row;
+   
+    padding-top: 10px;
+}
+
+/* div[class="dropdown"] */
+
+/* Style the links inside the sidenav */
+#mySidenav a {
+    position: absolute; 
+    left: -80px; 
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px; 
+    text-decoration: none; 
+    font-size: 20px; 
+    color: white; 
+    border-radius: 0 5px 5px 0; 
+    font-family: quicksand; 
+  }
+  
+  #mySidenav a:hover {
+    left: 0; 
+  }
+  
+ 
+  #about {
+    top: 80px;
+    background-color: #194a8d;
+  }
+  
+  #blog {
+    top: 140px;
+    background-color: #194a8d;
+  }
+  
+  #projects {
+    top: 200px;
+    background-color: #194a8d;
+  }
+  
+  #contact {
+    top: 260px;
+    background-color: #194a8d; 
+  }
+

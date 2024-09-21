@@ -1,0 +1,146 @@
+*{
+    box-sizing: border-box;
+}
+
+header{
+    
+    background-color: #194a8d;
+    font-family: sans-serif;
+    color: white;
+    height: 4.7rem;
+   
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+   
+    
+    
+}
+body{
+   margin:0px;
+  
+}
+
+.container{
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
+}
+.attendence_table{
+    width:90%;
+}
+
+.form_container{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.blue{
+    background-color: #194a8d;
+    font-family: sans-serif;
+    color: white;
+
+}
+table{
+    border-collapse: collapse;
+    border-color:black;
+    text-transform: capitalize;
+
+}
+
+/* table td:nth-child(2) {
+    background-color: #f0f0f0;
+} */
+
+.text_from{
+    font-size: 2rem;
+    font-family: nunito sans;
+}
+
+select{
+    margin-left: 20px;
+    width: 200px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    background-color: #d0d0d0;
+}
+
+input[type="submit"] {
+    border: 0px solid ;
+    background-color: #194a8d;
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+    padding: 10px;
+    font-size: 1.4rem;
+    
+    margin-left: 10px;
+
+}
+
+h3{
+    font-size: 2rem;
+    font-family: nunito sans;
+}
+
+footer{
+
+    background-color: #194a8d;
+    height: 5px;
+    width: 100%;
+    margin-top: 50px;
+
+}
+td:not([class="blue"]){
+    text-align: center;
+}
+
+.date_row ,.day_row{
+    text-align: center;
+}
+
+
+/* Style the links inside the sidenav */
+#mySidenav a {
+    position: absolute; 
+    left: -80px; 
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px; 
+    text-decoration: none; 
+    font-size: 20px; 
+    color: white; 
+    border-radius: 0 5px 5px 0; 
+    font-family: quicksand; 
+  }
+  
+  #mySidenav a:hover {
+    left: 0; 
+  }
+  
+ 
+  #about {
+    top: 80px;
+    background-color: #194a8d;
+  }
+  
+  #blog {
+    top: 140px;
+    background-color: #194a8d;
+  }
+  
+  #projects {
+    top: 200px;
+    background-color: #194a8d;
+  }
+  
+  #contact {
+    top: 260px;
+    background-color: #194a8d; 
+  }

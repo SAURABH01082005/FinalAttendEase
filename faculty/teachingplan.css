@@ -1,0 +1,122 @@
+*{
+    box-sizing: border-box;
+}
+
+header{
+    
+    background-color: #194a8d;
+    font-family: sans-serif;
+    color: white;
+    height: 4.7rem;
+   
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+   
+    
+    
+}
+body{
+   margin:0px;
+  
+}
+
+.container_main1{
+    width:100vw;
+    
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    
+   
+    /* margin-top: 10px; */
+    
+}
+
+.under_container_main1{
+    width: 80%;
+    height:100%;
+    /* text-align: center; */
+    /* border: 10px black solid; */
+    /*border-radius: 20px;       not workning*/
+    
+}
+
+table{
+    width:100%;
+    height:100%;
+    border-collapse: collapse;
+   
+}
+td{
+    font-size: 24px;
+    font-family: nunito sans;
+    padding:1px;
+    text-align: center;
+    text-transform: capitalize;
+}
+.module_name{
+    text-align: left;
+    text-transform: capitalize;
+}
+.secondhead_main1{
+    font-family: quicksand;  
+}
+th{
+    height: 50px;
+    font-size: 1.6rem;
+    background-color: #194a8d;
+    font-family: sans-serif;
+    color: white;
+}
+
+
+.separator{
+    width:80%;
+    height: 5px;
+    background-color: #194a8d;
+    margin-top: 40px;
+}
+
+
+
+/* Style the links inside the sidenav */
+#mySidenav a {
+    position: absolute; 
+    left: -80px; 
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px; 
+    text-decoration: none; 
+    font-size: 20px; 
+    color: white; 
+    border-radius: 0 5px 5px 0; 
+    font-family: quicksand; 
+  }
+  
+  #mySidenav a:hover {
+    left: 0; 
+  }
+  
+ 
+  #about {
+    top: 80px;
+    background-color: #194a8d;
+  }
+  
+  #blog {
+    top: 140px;
+    background-color: #194a8d;
+  }
+  
+  #projects {
+    top: 200px;
+    background-color: #194a8d;
+  }
+  
+  #contact {
+    top: 260px;
+    background-color: #194a8d; 
+  }

@@ -1,0 +1,174 @@
+*{
+    box-sizing: border-box;
+}
+
+header{
+    
+    background-color: #194a8d;
+    font-family: sans-serif;
+    color: white;
+    height: 4.7rem;
+   
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+   
+    
+    
+}
+body{
+   margin:0px;
+  
+}
+.main2{
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+
+}
+
+.container_main2{
+   
+    background-color: #f2f2f2;
+    height:500px;
+    width:760px;
+    border-radius: 10px;
+    
+}
+
+.form-group{
+    font-size: 1.3rem ;
+    font-family: sans-serif;
+    padding: 10px;
+}
+label[for="name"]{
+   display: block;
+}
+input[type="text"]{
+   display: block;
+   width: 97%;
+   
+   border: 0px;
+   border-radius: 10px;
+   box-shadow: 3px 3px 10px gainsboro;
+   margin:5px;
+   font-size: 1.3rem ;
+   font-family: sans-serif;
+   padding: 8px;
+
+}
+input[type="date"]{
+   display: block;
+   width: 97%;
+   padding:13px;
+   border: 0px;
+   border-radius:10px;
+   box-shadow: 3px 3px 5px gainsboro;
+   margin:5px;
+   font-size: 1.3rem ;
+    font-family: sans-serif;
+    padding: 10px;
+
+}
+
+/* input[type="time"]{
+    display: block;
+    width: 97%;
+  
+    border: 0px;
+    border-radius:10px;
+    box-shadow: 3px 3px 5px gainsboro;
+    margin:5px;
+    font-size: 1.3rem ;
+     font-family: sans-serif;
+     padding: 10px;
+} */
+ select[class="lecture_slot"]{
+  width: 94.2%;
+    border: 0px;
+    border-radius:10px;
+    box-shadow: 3px 3px 5px gainsboro;
+    margin:5px;
+    margin-left:15px;
+    margin-bottom:15px;
+    font-size: 1.3rem ;
+     font-family: sans-serif;
+     padding: 10px;
+ }
+
+ .select_time{
+  width: 100%;
+  
+  
+ }
+
+ /* .child2{
+  display:flex;
+  justify-content:center;
+} */
+
+button{
+    margin:5px;
+    width: 100px;
+    height: 35px;
+    margin:5px 10px 10px 15px;
+    background-color: #194a8d;
+    box-shadow: 3px 3px 10px gainsboro;
+    font-family: sans-serif;
+    color: white;
+    font-size: 1.3rem;
+    border:0px;
+    border-radius: 10px;
+    
+}
+.secondhead_main2{
+    font-family: quicksand;
+    
+    
+}
+
+
+
+/* Style the links inside the sidenav */
+#mySidenav a {
+    position: absolute; 
+    left: -80px; 
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px; 
+    text-decoration: none; 
+    font-size: 20px; 
+    color: white; 
+    border-radius: 0 5px 5px 0; 
+    font-family: quicksand; 
+  }
+  
+  #mySidenav a:hover {
+    left: 0; 
+  }
+  
+ 
+  #about {
+    top: 80px;
+    background-color: #194a8d;
+  }
+  
+  #blog {
+    top: 140px;
+    background-color: #194a8d;
+  }
+  
+  #projects {
+    top: 200px;
+    background-color: #194a8d;
+  }
+  
+  #contact {
+    top: 260px;
+    background-color: #194a8d; 
+  }

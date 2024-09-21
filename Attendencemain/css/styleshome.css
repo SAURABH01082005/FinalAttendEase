@@ -1,0 +1,191 @@
+/****************************TAG SELECTORS**********************/
+h1 {
+  color:white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+p {
+  color: #8f8f8f;
+  line-height: 1.5
+}
+
+/****************************CLASS SELECTORS**********************/
+.container-fluid {
+  padding: 3% 15% 5%;
+}
+
+.iphone {
+  position: absolute;
+  right: 23%;
+  transform: rotate(25deg);
+  width: 20%;
+}
+
+.navbar {
+  padding: 0 0 4.5rem;
+}
+
+.navbar-brand {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+.icon {
+  color: #4887de;
+}
+
+.icon:hover {
+  color: #2060ba;
+  cursor: pointer;
+}
+
+.icon-container {
+  text-align: justify;
+  text-align: center;
+  padding: 5%;
+}
+
+.mon {
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.icon-para {
+  color: #8f8f8f;
+}
+
+.title-div {}
+
+.features-div {}
+
+.testimonials-div {}
+
+.testimonial-img {
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+.carousel-item {
+  padding: 7% 15%;
+}
+
+.active {}
+
+.press-img {
+  width: 15%;
+  margin: 20px 20px 50px;
+}
+
+.bdek {
+  justify-content: center;
+  align-items: flex-end;
+  padding: 5%;
+  text-align: center;
+}
+
+
+a{
+  color: black;
+}
+
+/****************************ID SELECTORS**********************/
+#title {
+  background-color: #194a8d;
+  color: #fff;
+}
+
+#features {
+  position: relative;
+  background-color: #fff;
+  padding: 7% 15%;
+}
+
+#testimonials {
+  text-align: center;
+  background-color: #ef8172;
+  color: #fff;
+}
+
+#press {
+  background-color: #4887de;
+  text-align: center;
+  padding-bottom: 3%;
+}
+
+#cta {
+  background-color: #ff4c68;
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  padding: 7% 15%;
+}
+
+#footer {
+  text-align: center;
+  padding: 7% 15%;
+
+}
+#footer i {
+  padding: 1rem;
+
+}
+
+/* media resposive */
+@media (max-width: 1028px) {
+  #title {
+    text-align: center;
+  }
+
+  .iphone {
+    width: 100%;
+    position: static;
+    transform: rotate(0);
+    margin: auto;
+  }
+}
+
+.last_footer{
+  height: 10px;
+  width: 100vw;
+  background-color: #194a8d;
+}
+
+/* Can copy angela's code on video 92, code file in 93 */

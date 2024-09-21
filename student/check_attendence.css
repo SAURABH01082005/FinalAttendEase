@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+}
+
+header{
+    
+    background-color: #194a8d;
+    font-family: sans-serif;
+    color: white;
+    height: 4.7rem;
+   
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+   
+    
+    
+}
+body{
+   margin:0px;
+  
+}
