@@ -77,3 +77,44 @@ button{
     
     
 }
+
+
+/* Style the links inside the sidenav */
+#mySidenav a {
+    position: absolute; 
+    left: -80px; 
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px; 
+    text-decoration: none; 
+    font-size: 20px; 
+    color: white; 
+    border-radius: 0 5px 5px 0; 
+    font-family: quicksand; 
+  }
+  
+  #mySidenav a:hover {
+    left: 0; 
+  }
+  
+ 
+  #about {
+    top: 80px;
+    background-color: #194a8d;
+  }
+  
+  #blog {
+    top: 140px;
+    background-color: #194a8d;
+  }
+  
+  #projects {
+    top: 200px;
+    background-color: #194a8d;
+  }
+  
+  #contact {
+    top: 260px;
+    background-color: #194a8d; 
+  }
+

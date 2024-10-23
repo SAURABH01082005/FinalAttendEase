@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
@@ -112,8 +113,8 @@
             <div class="child2 form-group">Select Time </div><div class="dateboxchild">
                      <!-- Dropdown starts for time-->
                  
-                 <div class="select_time"><select name="lecture_slot dateboxchild" id="" class="lecture_slot" >
-                 <option value="" >--S-E-L-E-C-T--</option>
+                 <div class="select_time"><select name="time" id="" class="lecture_slot" >
+                 <option value="null" >--S-E-L-E-C-T--</option>
                
                   <!-- Dropdown php starts for time -->
                   <?php
@@ -128,13 +129,13 @@
        
         if($gray%2){
             ?>
-                     <option value="" style="background-color:#f2f2f2;" ><?php echo "$lecture_starts"."--"."$lecture_ends "; ?></option>
+                     <option value="<?php echo $lecture_starts . '--' . $lecture_ends; ?>" style="background-color:#f2f2f2;" ><?php echo "$lecture_starts"."--"."$lecture_ends "; ?></option>
                      
                      <?php
         }
         else{
             ?>
-                     <option value=""  ><?php echo "$lecture_starts"."--"."$lecture_ends "; ?></option>
+                     <option value="<?php echo $lecture_starts .'--'. $lecture_ends ; ?>"  ><?php echo "$lecture_starts"."--"."$lecture_ends "; ?></option>
                      
                      <?php
         }

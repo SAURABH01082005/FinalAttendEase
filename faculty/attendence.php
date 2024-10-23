@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     <title>Student_attendence</title>
-    <link rel="stylesheet" href="attendence.css">
+    <link rel="stylesheet" href="attendence2.css">
 </head>
 <body>
 <header>
@@ -109,9 +110,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     
 }
 
+date_default_timezone_set('Asia/Kolkata');
 if(!$first)
 $first=date("Y-m-1");
-date_default_timezone_set('Asia/Kolkata');
 // ------------------------------------month fetching form month_table ends--------------
 $toralDaysMonth=date("t",strtotime($first));
 $totalStudent=$num;
@@ -121,10 +122,13 @@ $substite2=strtoupper(date("F",strtotime($first)));
 <?php
 
 ?>
+
 <tr class="first_row">
     
     
-<td rowspan='2' class="blue">Names</td>
+    <!-- <td rowspan='2' class="blue">Id</td> -->
+<td rowspan='2' class="blue id">ID</td>
+<td rowspan='2' class="blue names">Names</td>
     <?php
 
 $counter=0;
@@ -150,6 +154,8 @@ for($i=1;$i<=$totalStudent+2;$i++){
            
         
             ?>
+            
+            <td class="blue"><?php echo $student_id_array[$counter] ?></td>
             <td class="blue"><?php echo $student_name_array[$counter] ?></td>
             <?php
 
@@ -173,28 +179,28 @@ for($i=1;$i<=$totalStudent+2;$i++){
                    
                     {
                         ?>
-                        <td style="background-color:#c72b3b"><?php echo $attendence['attendence']; ?></td>
+                        <td style="background-color:#1a6b9e "><?php echo $attendence['attendence']; ?></td>
                         <?php
                     }
                    else if(!strcmp($attendence['attendence'],$present))
                    
                     {
                         ?>
-                        <td style="background-color:#2a8d6d"><?php echo $attendence['attendence']; ?></td>
+                        <td style="background-color:#FFC300"><?php echo $attendence['attendence']; ?></td>
                         <?php
                     }
                      else if(!strcmp($attendence['attendence'],$absent))
                    
                     {
                         ?>
-                        <td style="background-color:#1a6b9e"><?php echo $attendence['attendence']; ?></td>
+                        <td style="background-color:#c72b3b "><?php echo $attendence['attendence']; ?></td>
                         <?php
                     }
                     else if(!strcmp($attendence['attendence'],$exemption))
                    
                     {
                         ?>
-                        <td style="background-color:#7a5c3a"><?php echo $attendence['attendence']; ?></td>
+                        <td style="background-color: #2a8d6d "><?php echo $attendence['attendence']; ?></td>
                         <?php
                     }
                     else
@@ -217,9 +223,82 @@ for($i=1;$i<=$totalStudent+2;$i++){
 </table></div>
 
         </main>
-        <footer>
+
+
+
+        <!-- //adding attendence through excel starts -->
+         <div class="excel_container">
+            <div class="excel_logo"><img src="excel_logo.png" alt="image" id="excel_logo_img"></div>
+            <div class="excel_import">
+               
+            <form class="" action="" method="post" enctype="multipart/form-data">
+            <div id="custom-file-upload">Upload Excel File:</div>
+            <div><input type="file" name="excel"class="file-input" id="excel" required value=""></div>
+			<div><button type="submit" name="import">Import</button>
+			</div>
+		</form>
+            </div>
+         </div>
+
+       
+
+
+         <?php
+		if(isset($_POST["import"])){
+            $conn = mysqli_connect("localhost", "root", "", "miniprojectattendence");
+			$fileName = $_FILES["excel"]["name"];
+			$fileExtension = explode('.', $fileName);
+      $fileExtension = strtolower(end($fileExtension));
+			$newFileName = date("Y.m.d") . " - " . date("h.i.sa") . "." . $fileExtension;
             
-        </footer>
+			$targetDirectory = "excelrecord/" . $newFileName;
+			move_uploaded_file($_FILES['excel']['tmp_name'], $targetDirectory);
+            
+			error_reporting(0);
+			ini_set('display_errors', 0);
+            
+			require 'ExcelRead/excel_reader2.php';
+			require 'ExcelRead/SpreadsheetReader.php';
+			$reader = new SpreadsheetReader($targetDirectory);
+          
+			foreach($reader as $key => $row){
+				$student_id = $row[0];
+				$current_date = $row[1];
+                // $current_date=date("Y-m-d",strtotime($current_date));
+				$attendence_month = $row[2];
+				$attendence_year = $row[3];
+				$attendence = $row[4];
+				mysqli_query($conn, "INSERT INTO attendencerough(`student_id`,`current_date`,`attendence_month`,`attendence_year`,`attendence`) VALUES( '$student_id', '$current_date', '$attendence_month','$attendence_year','$attendence')") or die(mysqli_error($conn));
+			}
+             
+			echo
+			"
+			<script>
+			alert('Succesfully Imported');
+			
+			</script>
+			";
+		}
+		?>
+
+        
+
+
+
+
+        <!-- //adding attendence through excel done-->
+        <?php  $conn = mysqli_connect("localhost", "root", "", "miniprojectattendence"); ?>
+        <div class="export_container">
+            <div class="export_logo"><img src="export.png" id="export_img" alt="logo"></div>
+            <div class="export_button"><div><a href="export.php"><button name="export">Export</button></a></div>
+
+         </div>
+    </div>
+
+    
+
+    <footer>    
+    </footer>
     
 </body>
 </html>

@@ -4,13 +4,16 @@
 <head>
   <meta charset="utf-8">
   <title>AttendEase</title>
+  <link rel="icon" href="logo.png" type="image/x-icon">
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Satisfy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
   <!-- CSS StyleSheets -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <link rel="stylesheet" href="faculty_front2.css">
+  <link rel="stylesheet" href="faculty_front6.css">
   <!-- bootstrap script -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -81,18 +84,49 @@
     <!----------------------------------------- image -->
     <img src="logo.png" alt="logoImg" class="circular_logo">
 
-<!-- full items below title -->
+            <!-- beautiful quotes starts-->
+            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+          <div class="quotes_container" data-aos="zoom-in">
+          <div id="quotes"> </div>
+       <div class="quote_buttom"> <button id="button_quote"> New Quotes</button><div id="author"> </div>
+    
+          </div></div>
+ 
+  
+          <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  const quotes=document.getElementById("quotes");
+  const author=document.getElementById("author");
+  const button_quote=document.getElementById("button_quote");
+  
+  api="../Attendencemain/api.json";
+  async function getQuotes (){
+    try{
+
+      let data=await fetch(api);
+      let realdata= await data.json();
+      const rand=Math.floor(Math.random()*realdata.length);
+      quotes.textContent=realdata[rand].text;
+      author.textContent=realdata[rand].author;
+    }catch(err){
+      console.log("error unable to fetch");
+    }
+  }
+  getQuotes();
+  button_quote.addEventListener("click",()=>{
+    getQuotes();
+  })
+
+</script>
+            <!-- beautiful quotes ends -->
+      
 
 
 
-  <!-- Features -->
 
 
-
-  <!-- Testimonials -->
-
-
-
+    
   <!-- Footer -->
 <P>                                                       
     <br><br><br><br><br><br><br><br><br><br><br>                

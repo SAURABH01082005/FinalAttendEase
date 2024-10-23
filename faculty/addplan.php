@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/x-icon">
     <link rel="stylesheet" href="addplan.css">
     <title>Add module</title>
 </head>
@@ -43,8 +44,8 @@
             <div class="child2 form-group">Select Time </div><div class="dateboxchild">
                      <!-- Dropdown starts for time-->
                  
-                 <div class="select_time"><select name="lecture_slot dateboxchild" id="" class="lecture_slot" >
-                 <option value="" >--S-E-L-E-C-T--</option>
+                 <div class="select_time"><select name="time" id="" class="lecture_slot" >
+                 <option value="null" >--S-E-L-E-C-T--</option>
                
                   <!-- Dropdown php starts for time -->
                   <?php
@@ -59,13 +60,13 @@
        
         if($gray%2){
             ?>
-                     <option value="" style="background-color:#f2f2f2;" ><?php echo "$lecture_starts"."--"."$lecture_ends "; ?></option>
+                     <option value="<?php echo $lecture_starts . '--' . $lecture_ends; ?>" style="background-color:#f2f2f2;" ><?php echo "$lecture_starts"."--"."$lecture_ends "; ?></option>
                      
                      <?php
         }
         else{
             ?>
-                     <option value=""  ><?php echo "$lecture_starts"."--"."$lecture_ends "; ?></option>
+                     <option value="<?php echo $lecture_starts . '--' . $lecture_ends; ?>" ><?php echo "$lecture_starts"."--"."$lecture_ends "; ?></option>
                      
                      <?php
         }
@@ -84,6 +85,26 @@
         </div>
         </div>
         </main>
-    
+        <?php
+if(isset($_POST['submit'])){
+    require 'C:\xampp\htdocs\miniprojectattendenceSem3\partialphp\_dbconnect.php';
+
+    $module_name=$_POST['module_name'];
+    $topic_name=$_POST['topic_name'];
+    $date=$_POST['date'];
+    $time=$_POST['time'];
+
+    $sql="INSERT INTO teaching_plan(`module_name`,`topic_name`,`date`,`time`) VALUE ('$module_name','$topic_name','$date','$time')";
+    $result=mysqli_query($conn,$sql) or die(mysqli_error($conn));
+   
+    // echo "Student have added successfully!";
+    ?>
+    <script>
+        alert("Student have added successfully!")
+    </script>
+    <?php
+}
+
+?>
 </body>
 </html>

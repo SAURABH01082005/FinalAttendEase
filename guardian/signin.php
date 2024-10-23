@@ -6,6 +6,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $showAlert=true;
     $name=$_POST['username'];
     $password=$_POST['password'];
+    $id=$_POST['student_id'];
     $sql="SELECT * FROM `gaurdian_login` WHERE `name`='$name' AND `password`='$password'";
     $result=mysqli_query($conn,$sql);
     $num= mysqli_num_rows($result);
@@ -28,6 +29,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
    }
    session_start();
    $_SESSION['guardian_username']="$name";
+   $_SESSION['student_id']=$id;
 }
 
 ?>
@@ -39,6 +41,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 <head>
     <title>Login - Attendance Management System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style_signin2.css">
 
@@ -51,8 +54,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     <div id="mySidenav" class="sidenav">
   <a href="https://localhost/miniprojectattendenceSem3/Attendencemain/AttendEase.html" id="about">Home</a>
   <!-- <a href="faculty_front.php" id="blog">Persona</a> -->
-  <!-- <a href="#" id="projects">see</a>
-  <a href="#" id="contact">Contact</a> -->
+  <!-- <a href="#" id="projects">see</a> -->
+  <!-- <a href="http://localhost/miniprojectattendenceSem3/Academic_Calendar_AY2024-25_ODD_Sem%5b1%5d.pdf" id="contact">Term</a> -->
 </div>
     <main>
     <h1 class="secondhead">Guardian Login</h1>
@@ -63,6 +66,10 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                 <input type="text" id="username" name="username" required>
             </div>
             <div class="form-group">
+                <label for="password name">Student ID:</label>
+                <input type="password" id="password" name="student_id" required>
+            </div>
+            <div class="form-group">
                 <label for="password name">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div>
@@ -71,8 +78,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
           <!-- <a href="" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Login</a> -->
           <button type="submit" id="submit">Login</button>
         </form>
-        <a href="" class="link">Forgot Password? </a><p></p>
-        <a href="">Forgot Username?</a>
+        <a href="" class="link">Forgot Credentials? </a>
+     
         </div>
     </main>
    

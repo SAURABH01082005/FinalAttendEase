@@ -19,6 +19,8 @@ header{
 }
 body{
    margin:0px;
+   /* height: 100wh; */
+   overflow-x: hidden;
   
 }
 
@@ -32,6 +34,7 @@ body{
 }
 .attendence_table{
     width:90%;
+  
 }
 
 .form_container{
@@ -44,7 +47,9 @@ body{
 .blue{
     background-color: #194a8d;
     font-family: sans-serif;
+    /* font-size: 2rem; */
     color: white;
+    padding:10px;
 
 }
 table{
@@ -54,52 +59,22 @@ table{
 
 }
 
-/* table td:nth-child(2) {
-    background-color: #f0f0f0;
-} */
-
-.text_from{
-    font-size: 2rem;
-    font-family: nunito sans;
-}
-
-select{
-    margin-left: 20px;
-    width: 200px;
-    font-size: 1.3rem;
-    border-radius: 10px;
-    background-color: #d0d0d0;
-}
-
-input[type="submit"] {
-    border: 0px solid ;
-    background-color: #194a8d;
-    color: white;
-    border-radius: 10px;
-    width: 150px;
-    padding: 10px;
-    font-size: 1.4rem;
-    
-    margin-left: 10px;
-
-}
-
-h3{
-    font-size: 2rem;
-    font-family: nunito sans;
-}
 
 footer{
 
     background-color: #194a8d;
     height: 5px;
     width: 100%;
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    
 
 }
 td:not([class="blue"]){
     text-align: center;
+    width: 100%;
+    width: 50px;
 }
+
 
 .date_row ,.day_row{
     text-align: center;
@@ -144,3 +119,41 @@ td:not([class="blue"]){
     top: 260px;
     background-color: #194a8d; 
   }
+
+  h4{
+     font-size:23.4327px ;font-family: 'Montserrat', sans-serif;font-weight: 500; margin-top: 0;
+     white-space: pre;      
+
+}
+.present_c,.absent_c,.holiday_c,.exemption_c{
+  width: 14px;
+  height: 14px;
+  border-radius: 5rem;
+}
+.present_c{
+  background-color: #1a6b9e;
+}
+.absent_c{
+  background-color:#c72b3b ;
+}
+.holiday_c{
+  background-color: #2a8d6d ;
+}
+.exemption_c{
+  background-color:  #FFC300;
+}
+.instruction{
+ 
+  width: 1000px;
+ 
+  display: flex;
+    flex-direction: row;
+    margin-left: 900px;
+    margin-top: 80px;
+
+
+}
+.text{
+  font-size: 1.3rem;
+  padding:10px
+}

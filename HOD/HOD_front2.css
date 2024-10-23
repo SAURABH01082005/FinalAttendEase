@@ -201,3 +201,52 @@ h4{
   display: flex;
  
 }
+
+
+/* quote css */
+
+.quotes_container{
+  position: relative;
+  display: flex;
+  margin:20px 0px 0px 50px;
+  background-color:#9aa1a5;
+  height: 200px;
+  width: 700px;
+  border: #8f8f8f solid 5px ;
+  border-radius: 10px;
+ 
+}
+
+#button_quote{ 
+  position:absolute;
+  border: 0px solid ;
+  background-color: #194a8d;
+  color: white;
+  border-radius: 10px;
+  width: 200px;
+  height: 60px;
+  font-size: 1.4rem;
+  cursor:pointer;
+  bottom: 0px;
+  left: 10px;
+}
+#quotes{
+  position:absolute;
+  font-size: 1.5rem;
+  font-family: lora;
+  margin-top: 20px;
+  margin-left: 10px ;
+}
+.quote_buttom{
+  position:absolute;
+  bottom: 5px;
+}
+#author{
+  width: 600px;
+  
+  position:absolute;
+  left:400px;
+  bottom: 0px;
+  font-family: satisfy;
+  font-size: 2rem;
+}

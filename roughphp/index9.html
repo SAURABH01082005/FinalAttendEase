@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>qoutes</title>
+</head>
+<body>
+  <div id="quotes"> </div>
+  <div id="author"> </div>
+    <button id="button_quote"> New Quotes</button>
+ 
+  
+
+<script>
+  const quotes=document.getElementById("quotes");
+  const author=document.getElementById("author");
+  const button_quote=document.getElementById("button_quote");
+  
+  api="https://cors-anywhere.herokuapp.com/https://zenquotes.io/api/quotes";
+  const rand=Math.floor(Math.random()*50);
+  // console.log(rand);
+  const getQuotes= async ()=>{
+    try{
+
+      let data=await fetch(api);
+      let realdata= await data.json();
+      // console.log(realdata);
+      quotes.textContent=realdata[rand].q;
+      author.textContent=realdata[rand].a;
+    }catch(err){
+      console.log("error unable to fetch");
+    }
+  }
+  getQuotes();
+  button_quote.addEventListener("click",()=>{
+    getQuotes();
+  })
+
+</script>
+</body>
+</html>

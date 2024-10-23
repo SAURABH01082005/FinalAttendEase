@@ -1,3 +1,6 @@
+<link rel="icon" href="logo.png" type="image/x-icon">
+
+
 <form action="" method="post">
     <select name="month_no" id="">
         <?php

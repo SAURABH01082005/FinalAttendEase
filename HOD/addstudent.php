@@ -6,13 +6,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="addstudent2.css">
+    <link rel="stylesheet" href="addstudent.css">
     <title>Add student</title>
 </head>
 <body>
          <header>
         <h1>AttendEase</h1>
         </header>
+
+
+        <div id="mySidenav" class="sidenav">
+  <a href="https://localhost/miniprojectattendenceSem3/Attendencemain/AttendEase.html" id="about">Home</a>
+  <a href="HOD_front.php" id="blog">Persona </a>
+  <!-- <a href="#" id="projects">see</a>
+  <a href="#" id="contact">Contact</a> -->
+</div>
         <main>
             <h1 class="secondhead">Add Student</h1>
             <div class="container">

@@ -9,6 +9,7 @@ h1 {
 
 body {
   font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -189,3 +190,60 @@ a{
 }
 
 /* Can copy angela's code on video 92, code file in 93 */
+
+/* Style the links inside the sidenav */
+#mySidenav,.sidenav {
+  z-index:5;
+  width: 250px; 
+  height: 75px;
+  background-color:#a6a6a6;
+  position: absolute;
+  bottom:  120px;
+
+  transition: 0.3s;
+  padding: 0px;
+  
+  font-size: 25px; 
+  
+  border-radius: 0 5px 5px 0; 
+  font-family: quicksand; 
+  left: -200px; 
+}
+a{
+  text-decoration: none; 
+  color: #194a8d;
+  padding: 14px;
+  padding-left: 0px;
+}
+
+#mySidenav:hover{
+  left: 0px; 
+  color: white;
+
+}
+
+#calendar{
+  width:30px;
+  height: 25px;
+  margin-top: 23px;
+}
+
+#contact{
+  margin-top: 3px;
+}
+#mySidenav{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+/* 
+#about {
+  top: 80px;
+  background-color: #194a8d;
+} */
+/* #mySidenav a:hover {
+  left: 0; 
+} */

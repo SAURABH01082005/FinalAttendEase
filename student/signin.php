@@ -6,7 +6,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $showAlert=true;
     $name=$_POST['username'];
     $password=$_POST['password'];
-    $sql="SELECT * FROM `student_login` WHERE `name`='$name' AND `password`='$password'";
+    $id=$_POST['userid'];
+    $sql="SELECT * FROM `student_login` WHERE `name`='$name' AND `password`='$password' AND `id`=$id";
     $result=mysqli_query($conn,$sql);
     $num= mysqli_num_rows($result);
    if($num)
@@ -27,6 +28,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 session_start();
 $_SESSION['student_username']="$name";
+$_SESSION['student_userid']=$id;
 
 
 }
@@ -40,6 +42,7 @@ $_SESSION['student_username']="$name";
 <head>
     <title>Login - Attendance Management System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style_signin2.css">
 
@@ -64,6 +67,10 @@ $_SESSION['student_username']="$name";
                 <input type="text" id="username" name="username" required>
             </div>
             <div class="form-group">
+                <label for="username name">User ID:</label>
+                <input type="text" id="username" name="userid" required>
+            </div>
+            <div class="form-group">
                 <label for="password name">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div>
@@ -72,8 +79,8 @@ $_SESSION['student_username']="$name";
           <!-- <a href="" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Login</a> -->
           <button type="submit" id="submit">Login</button>
         </form>
-        <a href="" class="link">Forgot Password? </a><p></p>
-        <a href="">Forgot Username?</a>
+        <a href="" class="link">Forgot Credentials? </a>
+        
         </div>
     </main>
    

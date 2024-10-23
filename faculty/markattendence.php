@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     <title>Faculty</title>
-    <link rel="stylesheet" href="markattendence3.css">
+    <link rel="stylesheet" href="markattendence4.css">
 </head>
 <body>
     <header>
@@ -25,32 +26,38 @@
             <!-- <input type="checkbox" value="class" name="class"> -->
              <div class="container">
              <div class="under_container">
-            <table class="TableContainer">
-                <form action="" method="post">
+             <!-- style="table-layout: fixed; width: 100% !important;" -->
+             <form action="" method="post">
+            <table class="TableContainer" >
                     <tr class="row1">
-                        <th>Student Name</th>
-                        <th >P</th>
-                        <th>A</th>
-                        <th>E</th>
-                        <th>H</th>
+                        <th class="th1">Id</th>
+                        <th class="th2">Student Name</th>
+                        <th class="th3">P</th>
+                        <th class="th4">A</th>
+                        <th class="th5">E</th>
+                        <th class="th6">H</th>
+                        <th class="justification" id="justification" class="th">Justification</th>
                     </tr>
                     <?php
                  require 'C:\xampp\htdocs\miniprojectattendenceSem3\partialphp\_dbconnect.php';
                  $result=mysqli_query($conn, "SELECT * FROM  student_info") or die(mysqli_error($conn));
                  $color=1;
+                 $srno=0;
                  while($row=mysqli_fetch_assoc($result)){
                  $color++;
-                  
+ 
                  // echo $row['student_name'];
                  $student_name=$row['student_name'];
                  $student_id=$row['student_id'];
                ?>
                  <?php
                  if($color%2==0){
+                    $srno++;
                     ?>
                     <tr>
-                 <td class="firstrow_name ">
-                 <?php echo $student_name; ?>
+                    <td class="student_id"><?php echo $student_id; ?></td>   
+                 <td class="firstrow_name" style="width: 600px;">
+                 <?php echo "$srno"."."."$student_name"; ?>
                  </td>
                  <!-- <label for="studnet_selected"> -->
                  <td >
@@ -65,6 +72,9 @@
                  <td>
                     <input type="checkbox" name="student_holiday[]" value="<?php echo $student_id; ?>" >
                  </td>
+                 <td>
+                    <input type="text" name="justification" class="justification">
+                 </td>
                  <!-- </label> -->
 
                   </tr>
@@ -73,11 +83,13 @@
                  }
 
                  else
-                 {
+                 {   
+                    $srno++;
                  ?>
                 <tr style="background-color:#f2f2f2;">
+                <td class="student_id"><?php echo $student_id; ?></td>
                  <td class="firstrow_name ">
-                 <?php echo $student_name; ?>
+                 <?php echo "$srno"."."."$student_name"; ?>
                  </td>
                  <td >
                     <input type="checkbox" name="student_present[]" value="<?php echo $student_id; ?>">
@@ -91,6 +103,9 @@
                  <td>
                     <input type="checkbox" name="student_holiday[]" value="<?php echo $student_id; ?>">
                  </td>
+                 <td>
+                    <input type="text" name="justification" class="justification">
+                 </td>
 
                   </tr>
                     <?php
@@ -98,109 +113,118 @@
                 }
                  ?>
                    
-                 <tr>
-                   
-                 <div ><td colspan="5" class="datebox" style="text-align:left;"> <div class="child2">Select Date (optional) </div><div class="dateboxchild"><input type="date" name="select_date" style="margin-right:50px;" ></div>
-                  <div class="child2">Select Time </div><div class="dateboxchild">
-                     <!-- Dropdown starts for time-->
-                 
-                 <select name="lecture_slot dateboxchild" id="" class="lecture_slot" style="margin-left:8px;">
-                 <option value="" >--S-E-L-E-C-T--</option>
-               
-                  <!-- Dropdown php starts for time -->
-                  <?php
-        require 'C:\xampp\htdocs\miniprojectattendenceSem3\partialphp\_dbconnect.php';
-        $result=mysqli_query($conn, "SELECT * FROM  lecture_slot_table") or die(mysqli_error($conn));
-        $gray=0;
-        while($row=mysqli_fetch_assoc($result)){
-            
-            $lecture_starts=$row['lecture_starts'];
-            $lecture_ends=$row['lecture_ends'];
-        
-       
-        if($gray%2){
-            ?>
-                     <option value="" style="background-color:#f2f2f2;" ><?php echo "$lecture_starts"."--"."$lecture_ends "; ?></option>
-                     
-                     <?php
-        }
-        else{
-            ?>
-                     <option value=""  ><?php echo "$lecture_starts"."--"."$lecture_ends "; ?></option>
-                     
-                     <?php
-        }
-        $gray++;
-      }
-
-        ?> </select >
-                  <!-- Dropdown php ends for time -->
-                  <!-- Dropdown ends for time -->
-                  </div></td></div>
-               
-                 </tr>
-                 <tr class="row_dropdown">
-                   
-                 <!-- Dropdown -->
-                 <div ><td colspan="5" class="dropdown" style="text-align:left;"> <div class="dropdown">Select Module Name</div> 
-                 <select name="module_topic" id="">
-                 <option value="" >--S-E-L-E-C-T--</option>
-                 <!-- Dropdown php starts -->
-                 <?php
-        require 'C:\xampp\htdocs\miniprojectattendenceSem3\partialphp\_dbconnect.php';
-        $result=mysqli_query($conn, "SELECT * FROM  teaching_plan") or die(mysqli_error($conn));
-
-        $pre_module_name="hello";
-        while($row=mysqli_fetch_assoc($result)){
-            
-            $module_name=$row['module_name'];
-            $topic_name=$row['topic_name'];
-            date_default_timezone_set('Asia/Kolkata');
-            $date=$row['date'];
-            // if($module_name){
-            //     echo ;
-            // }
-             $present_date=date("Y-m-d");
-            if($module_name!=$pre_module_name){
-            ?>
-                     <option value="" style="background-color:#f2f2f2;" ><?php echo " $module_name "; ?></option>
-                     
-                     <?php
-        }
-    $pre_module_name=$module_name;}
-                     ?>
-                 <!-- Dropdown php ends -->
-                    </select></td></div>
-               
-                 </tr>
-
-                 <tr >
-                    <td colspan="5" style="text-align:left;"  class="topic_teached"> <div class="topic_teached">Enter Topic Teached </div><input type="text" name="" id=""  placeholder="Enter text"/></td>
-                 </tr>
                 
-                 <tr>
-                   
-                  <td id="submit" style="text-align:left;"><input type="submit" name="addAttendenceBTN"></td>
                  
-                 </tr>
-              </form>
-          </table>
+                 
+                </table>
+                
+                   
+                <div class="select_date"><div class="child2">Select Date (optional) </div><div class="dateboxchild"><input type="date" name="date" style="margin-right:50px;" ></div>
+                  <div class="select_time"><div class="child2">Select Time </div>
+                  <!-- Dropdown starts for time-->
+                  
+                  <div class="dateboxchild">
+                   <select name="time" id="" class="lecture_slot" name="time" style="margin-left:8px;">
+                   <option value="" value="none">--S-E-L-E-C-T--</option>
+                 
+                    <!-- Dropdown php starts for time -->
+                    <?php
+          require 'C:\xampp\htdocs\miniprojectattendenceSem3\partialphp\_dbconnect.php';
+          $result=mysqli_query($conn, "SELECT * FROM  lecture_slot_table") or die(mysqli_error($conn));
+          $gray=0;
+          while($row=mysqli_fetch_assoc($result)){
+              
+              $lecture_starts=$row['lecture_starts'];
+              $lecture_ends=$row['lecture_ends'];
+          
+         
+              $print_lecture_time = "$lecture_starts -- $lecture_ends"; 
+          if($gray%2){
+              
+                     echo  "<option value='$print_lecture_time' style='background-color:#f2f2f2;' >$print_lecture_time</option>";
+                       
+                       
+          }
+          else{
+              
+                      echo "<option value='$print_lecture_time'>$print_lecture_time</option>";
+                       
+                      
+          }
+          $gray++;
+        }
+  
+          ?> </select >
+                    <!-- Dropdown php ends for time -->
+                    <!-- Dropdown ends for time -->
+                    </div></div></div>
+                 
+                     
+                   <!-- Dropdown -->
+                   <div class="select_module_name"> <div class="dropdown">Select Module Name</div> 
+                   <select name="module_name" id="">
+                   <option value="none">--S-E-L-E-C-T--</option>
+                   <!-- Dropdown php starts -->
+                   <?php
+          require 'C:\xampp\htdocs\miniprojectattendenceSem3\partialphp\_dbconnect.php';
+          $result=mysqli_query($conn, "SELECT * FROM  teaching_plan") or die(mysqli_error($conn));
+  
+          $pre_module_name="hello";
+          while($row=mysqli_fetch_assoc($result)){
+              
+              $module_name=$row['module_name'];
+              $topic_name=$row['topic_name'];
+              date_default_timezone_set('Asia/Kolkata');
+              $date=$row['date'];
+              // if($module_name){
+              //     echo ;
+              // }
+               $present_date=date("Y-m-d");
+              if($module_name!=$pre_module_name){
+              
+                     echo "<option value='$module_name' style='background-color:#f2f2f2;'>$module_name</option>";
+                       
+                      
+          }
+      $pre_module_name=$module_name;}
+                       ?>
+                   <!-- Dropdown php ends -->
+                      </select></div>
+                 
+                  <div class="topic_teached">Enter Topic Teached <input type="text" name="module_topic" id=""  placeholder="Enter text"/></div>
+                   
+                     
+                    <input type="submit" name="addAttendenceBTN">
+                   
+                   
+                   
+            </form>
           </div>
           </div>
+         
 
 <?php
 //date logic starts
 
 if(isset($_POST['addAttendenceBTN'])){
+    //adding module to databse start
+    $module_name=$_POST['module_name'];
+    $module_topic=$_POST['module_topic'];
+    $date=$_POST['date'];
+    $time=$_POST['time'];
+     $result=mysqli_query($conn,"INSERT INTO  module_selection(`module_name`,`module_topic`,`date`,`time`)  VALUES('$module_name','$module_topic','$date','$time') ") or die(mysqli_error($conn));
+    
+
+    //adding module to databse end
 
     date_default_timezone_set("Asia/calcutta");
 
-    if($_POST['select_date']==NULL){
+    if($_POST['date']==NULL){
         $select_date=date("Y-m-d");
     }
     else
     {
-        $select_date=$_POST['select_date'];
+        $select_date=$_POST['date'];
     }
     // echo $select_date;
 
@@ -247,8 +271,7 @@ if(isset($_POST['student_holiday'])){
 // echo "Attendence added successfully";
 }
 ?>
-                </form>
-             </table>
+                
         
     
 

@@ -19,51 +19,64 @@ header{
 }
 body{
    margin:0px;
+   overflow-x: hidden;
   
 }
+
 
 .container{
     width:100vw;
    
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     margin-top: 10px;
     
 }
 
 .under_container{
-    width: 80%;
-    height:100%;
+    width: 100%;
     display: flex;
-    /* border: 10px black solid; */
-    /* border-radius: 20px;       not workning*/
-    
+    justify-content: center;   
 }
 
 .TableContainer{
+    /* table-layout: fixed; */
     width:100%;
-    height:90%;
     border-collapse: collapse;
+    display:flex;
    
 }
+
+.student_id{
+    width:200px;
+    font-family: nunito sans;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+
+td,th{
+    text-align: center;
+    padding: 0px;
+
+}
+
 th{
-    
     background-color: #194a8d;
     font-family: sans-serif;
     color: white;
 }
 
-td,th{
-    text-align: center;
 
-}
 
 .firstrow_name{
     font-family: nunito sans;
     text-align: left;
     font-size: 1.5rem;
     text-transform: capitalize;
+    flex-grow:2;
+ 
 }
 
 .datebox,.submitbox {
@@ -89,7 +102,10 @@ input[type="submit"] {
     width: 300px;
     padding: 10px;
     font-size: 1.4rem;
-    margin-top: 10px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    margin-left: 920px;
+    height: 50px;
 
 }
 
@@ -100,11 +116,7 @@ input[type="submit"] {
 .dateboxchild {
     padding: 20px;
 }
-.child2{
-    
-    padding-left:0px ;
-    padding-top: 27px;
-}
+
 input[type="submit"]:hover{
     background-color:  #194a8d ;
     color: white;
@@ -158,7 +170,7 @@ select{
 }
 
 div[class="dropdown"]{
-    margin-top: 7px;
+    margin-top: 0px;
 }
 
 input[type="text"]{
@@ -177,16 +189,52 @@ div[class="topic_teached"]{
     font-size: 1.8rem;
     font-weight: 400;
     margin-top: 15px;
-    
+}
+
+.child2{
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-top: 25px;
+    padding-top: 10; 
+    height: 50px; 
+  
 }
 
 td[class="topic_teached"]{
     display: flex;
     flex-direction: row;
    
-    padding-top: 10px;
+    padding-top: 10;
 }
 
+input[class="justification"]
+{
+    width:300px;
+    margin-left: 20px;
+    margin-right: 8px;
+
+}
+
+.student_name{
+    flex-grow: 2;
+}
+
+tr{
+    height: fit-content ;
+}
+
+.select_date,.select_time,.select_module_name{
+    display: flex;
+}
+
+.select_time{
+    margin-left: 200px;
+}
+
+/* td{
+   
+    height: 30px !important;
+} */
 /* div[class="dropdown"] */
 
 /* Style the links inside the sidenav */
@@ -228,3 +276,6 @@ td[class="topic_teached"]{
     background-color: #194a8d; 
   }
 
+  td#last_heading.last_heading {
+    padding: 100px !important;
+}
